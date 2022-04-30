@@ -1,0 +1,8 @@
+matplotlib
+pandas
+python_telegram_bot
+requests
+telegram
+tqdm
+influxdb-client
+python-dotenv

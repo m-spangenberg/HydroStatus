@@ -1,0 +1,11 @@
+set -e
+GRANT ALL ON ${INFLUXDB_DB} TO ${INFLUXDB_USER}
+USE ${INFLUXDB_DB}
+INSERT water,sensor=flowsensor flowrate=0,usage=0
+CREATE RETENTION POLICY "retainweek" ON "${INFLUXDB_DB}" DURATION 1w REPLICATION 1 DEFAULT
+CREATE RETENTION POLICY "retainmonth" ON "${INFLUXDB_DB}" DURATION 4w REPLICATION 1
+CREATE RETENTION POLICY "retainhalfyear" ON "${INFLUXDB_DB}" DURATION 24w REPLICATION 1
+CREATE RETENTION POLICY "retainyear" ON "${INFLUXDB_DB}" DURATION 52w REPLICATION 1
+CREATE CONTINUOUS QUERY "minute" ON "${INFLUXDB_DB}" BEGIN SELECT sum("usage") AS "1m-usage" INTO "retainmonth"."minute" FROM "water" GROUP BY time(1m) END
+CREATE CONTINUOUS QUERY "halfhour" ON "${INFLUXDB_DB}" BEGIN SELECT sum("usage") AS "30m-usage" INTO "retainhalfyear"."halfhour" FROM "water" GROUP BY time(30m) END
+CREATE CONTINUOUS QUERY "hour" ON "${INFLUXDB_DB}" BEGIN SELECT sum("usage") AS "1h-usage" INTO "retainyear"."hour" FROM "water" GROUP BY time(1h) END
