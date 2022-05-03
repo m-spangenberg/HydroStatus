@@ -25,6 +25,8 @@ For my __Harvard CS50__ final project, I set out to create a __hardware applicat
 
 [![Hydro Status Demo Video Link](http://img.youtube.com/vi/hqjcAQJdR2c/0.jpg)](https://youtu.be/hqjcAQJdR2c "Hydro Status Demo Video")
 
+<sub>See the local [demo video](readme/video/hydrostatus_harvardcs50.ogv) if the above link is unavailable</sub>
+
 ### __Motivation__
 
 The reason for choosing this project was to help solve a simple problem. I live in a desert climate where water is precious and burst water pipes are a common occurrence, so I set out to find a way to measure and report on our home's water usage to help save water, and reduce water bills. 
@@ -216,7 +218,7 @@ I chose grafana to build out a functional, locally hosted dashboard. Some pertin
 * Graphs (Hourly, Daily, Weekly, Monthly)
 ```
 
-<sub>See [hydrostatus-dashboard.json](dashboard/hydrostatus-dashboard.json) for the full configuration</sub>
+<sub>See [grafana_dashboard.json](resources/grafana_dashboard.json) for the full configuration</sub>
 
 ---
 
@@ -277,7 +279,7 @@ Setting up a Telegram agent to relay notifications only requires the following s
 4. Issue: /newbot
 ```
 
-See [hydrostatusBot.py]() for more information.
+See [hydrostatusBot.py](src/hydrostatusBot.py) for more information.
 
 ---
 
