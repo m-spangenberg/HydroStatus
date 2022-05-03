@@ -22,11 +22,8 @@
 For my __Harvard CS50__ final project, I set out to create a __hardware application__ that continuously logs mains __water usage__ to a __database__ using a __micro-controller__ and a __flow sensor__. The time-series data is then graphed by a __dashboard__ and monitored by a __notification system__ that sends out __alerts__ when the water usage is too high.
 
 #### __Video Demo__
-<div align="center">
-<video width="850" controls>
-  <source src="readme/video/hydrostatus_harvardcs50.ogv">
-</video>
-</div>
+
+[![Hydro Status Demo Video Link](http://img.youtube.com/vi/hqjcAQJdR2c/0.jpg)](https://youtu.be/hqjcAQJdR2c "Hydro Status Demo Video")
 
 ### __Motivation__
 
